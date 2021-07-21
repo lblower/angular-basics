@@ -1,107 +1,161 @@
-<ul>
-<li>directie is used in html</li>
-<li>pipe is also used in html </li>
-</ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Angular Basic</a>
+  </div>
+</nav>
 
 <div class="container">
-  {{printMeOnHTml}} - interpolation
-  <hr/>
-  binding from html to a ts file - u need events
-  <button (click)="eventHit()" >Hit Me </button>
-  <hr/>
-  <button (click)="toggleText()" >toggle Me </button>
-  {{printMe}}
-</div>
-
-
---------------
---- Binding -  sharing data from ts file to html file --
-
-one way Binding
-two way binding - [(ngModule)] -- forms  - real time html and ts both are getting updated
-<hr/>
---------------------
-[]  - input or attribute  it need a input from a ts file - props -  class property
-() - event directive  - it will hit a function in a ts file - event() / class - method
-<hr/>
-<hr/>
-
-<h1>-------Structural directive ---</h1>
-<div class="conatiner">
-  <h2>ngIf</h2> <p>Decide whater thing should apper or not in html file w.r.t some logic</p>
-  <div *ngIf="showHide">
-    <h1>I am a heading visible to u</h1>
+  <div class="theory">
+    <header>Theory</header>
+    <ul>
+      <li>Component has html + css + selector tag. Selector tag can be used in another component HTML for render</li>
+      <li>Directive is used in html</li>
+      <li>pipe is also used in html</li>
+    </ul>
   </div>
+  <section class="binding m-3 p-3 bg-light">
+    <header>Bindings</header>
+    {{ printMeOnHTml }} - interpolation
+    <hr />
+    binding from html to a ts file - u need events
+    <button (click)="eventHit()">Hit Me</button>
+    <hr />
+    <button (click)="toggleText()">toggle Me</button>
+    {{ printMe }}
+    <div class="alert alert-primary">
+      Binding - sharing data from ts file to html file --
+    </div>
+    <ul>
+      <li>one way Binding</li>
+      <ul>
+        <li>interpolation <code> double curly braces </code></li>
+        <li>property binding - <code>[]</code></li>
+      </ul>
 
-    <section class="alert alert-primary" *ngIf="caseKey === 1">
-      <h1> Sign In</h1>
-    </section>
-    <section *ngIf="caseKey === 2">
-      <h1> Log Out</h1>
-    </section>
-    <section *ngIf="caseKey != 1 && caseKey != 2">
-      <h1> I am if  Default case</h1>
-    </section>
-</div>
+      <li>
+        two way binding - [(ngModule)] -- forms - real time html and ts both are
+        getting updated
+      </li>
+    </ul>
 
-<div class="conatiner">
-  <h2>ngSwitch</h2>
-
-  <span [ngSwitch]="caseKey">
-  <section class="alert alert-primary" *ngSwitchCase="1">
-    <h1> I am Switch case one</h1>
+    <hr />
+    [] - input or attribute it need a input from a ts file - props - class
+    property () - event directive - it will hit a function in a ts file -
+    event() / class - method
+    <hr />
   </section>
-  <section *ngSwitchCase="2">
-    <h1> I am Switch case two</h1>
+
+  <section class="m-3 p-3 bg-light">
+    <h1>-------Structural directive ---</h1>
+    <div class="conatiner">
+      <h2>ngIf</h2>
+      <p>
+        Decide whater thing should apper or not in html file w.r.t some logic
+      </p>
+      <div *ngIf="showHide">
+        <h1>I am a heading visible to u</h1>
+      </div>
+
+      <section class="alert alert-primary" *ngIf="caseKey === 1">
+        <h1>Sign In</h1>
+      </section>
+      <section *ngIf="caseKey === 2">
+        <h1>Log Out</h1>
+      </section>
+      <section *ngIf="caseKey != 1 && caseKey != 2">
+        <h1>I am if Default case</h1>
+      </section>
+    </div>
+
+    <div class="conatiner">
+      <h2>ngSwitch</h2>
+
+      <span [ngSwitch]="caseKey">
+        <section class="alert alert-primary" *ngSwitchCase="1">
+          <h1>I am Switch case one</h1>
+        </section>
+        <section *ngSwitchCase="2">
+          <h1>I am Switch case two</h1>
+        </section>
+        <section *ngSwitchDefault>
+          <h1>I am Switch Default case</h1>
+        </section>
+      </span>
+    </div>
+    <div class="conatiner">
+      <h2>ngFor</h2>
+      <ul>
+        <li *ngFor="let item of arrVal">
+            {{item}}
+        </li>
+      </ul>
+
+      <div *ngIf="printUserData && printUserData.length">
+
+          I have this much elements - {{printUserData}}
+
+
+
+          <div *ngFor="let userData of printUserData" [data-val]="printMe" >
+              hello <b> {{userData['name']}}  </b>static data
+              <div>
+                {{userData['picture']}}
+
+                <!-- <img src="{{userData['picture']}}" alt="image" />  one way -->
+
+                <img [src]="userData['picture']" alt="image" />
+                  [] - inside html tag before closing
+                 double curly brece inside html tag
+              </div>
+          </div>
+
+          <div *ngFor='let itemValue of  ["asda","Hello","example"]'>
+              {{itemValue}}
+          </div>
+      </div>
+
+    </div>
+    <hr />
+    <section class="theory">
+      -------Strutural --- -- playing with dom - hide/show elements
+      *ngIf="expression" *<span [ngSwitch]="">
+        <p *ngSwitchCase="true"></p>
+        <p *ngSwitchCase="false"></p>
+        <p *ngSwitchDefault></p>
+      </span>
+
+      *ngFor="let item of items" ------------------------------- Attribute
+      Diretive ngStlye ngclass -- it's play with a html tag attributes
+      -----------
+    </section>
   </section>
-  <section *ngSwitchDefault>
-    <h1> I am Switch Default case</h1>
+
+  <section class="bg-light" >
+      <!-- <h1 style="border:3px solid dotted; color:red">Attribute Directive</h1> -->
+    <button (click)="toogleColor()">ColorChnge</button>
+      <h1 class="alert" [ngClass]="{'alert-danger newclass redclass': redClass , 'alert-primary': !redClass }"  >Attribute Directive</h1>
+
+      alert-primary / alert-danger
+      -ngClass - ngStyle - helps u to attach a class / style Dynamically
+
+    <img src="https://picsum.photos/200/300" alt="image" class="figure" id="dummyimage"  />
+    <hr/>
+    <input type="text" name="search"  class="alert alert-danger" placeholder="Type something"/>
   </section>
-  </span>
 
+  <section class="p-3 m-auto">
+  <div class="container" [ngClass]="{ 'bg-light': true }">
+    <header>Component</header>
 
+    <app-courses></app-courses>
+    <hr />
+    <!-- small small component to make a bug html file-->
+    <app-contact-us></app-contact-us>
+    <!-- custom selector -->
+    <hr />
+    <app-faq></app-faq>
+    <hr />
+    <app-about-us></app-about-us>
+  </div>
+</section>
 </div>
-<div class="conatiner">
-  <h2>ngFor </h2>
-</div>
-<hr/>
-
--------Strutural ---
--- playing with dom  - hide/show elements
-*ngIf="expression"
-
-*<span [ngSwitch]="">
-<p *ngSwitchCase="true">
-
-</p>
-<p *ngSwitchCase="false">
-
-</p>
-<p *ngSwitchDefault>
-
-</p>
-</span>
-
-*ngFor="let item of items"
--------------------------------
-Attribtute diretive
-
-ngStlye ngclass -- it's play with a html tag attributes
-
-------------
-
-<div class="container" [ngClass]="{'btn btn-primary':true}">
-  <hr/>
-
-
-  <app-courses></app-courses>
-  <hr/>
-  <!-- small small component to make a bug html file-->
-  <app-contact-us></app-contact-us> <!-- custom selector -->
-<hr/>
-<app-faq></app-faq>
-<hr/>
-<app-about-us></app-about-us>
-</div>
-
-

@@ -6,3 +6,16 @@ ul {
 li {
   color: red;
 }
+
+section{
+  border: 2px solid;
+}
+
+.newclass {
+  border: 1px solid pink dotted;
+  font-size: 100px;
+}
+
+#id {
+
+}

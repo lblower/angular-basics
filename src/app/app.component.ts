@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import userData from './utils/data.json';
 // decorator @ - is a typescript specific logic
 // @pipe -
 // @directive -
@@ -16,12 +16,22 @@ export class AppComponent {
  // one way binding ts file to html file
   printMeOnHTml = "i am a html or a string to be pritned on html page";
   printMe = "helo";
-showHide = false;
-
+  showHide = false;
+  arrVal = [1,2,3,4,5,67,23,235];
   caseKey = 2224; // switch case
 
+  printUserData = userData; // print this in html only if it's is a array ( or object)
+
+
+  redClass = false;
+
+  toogleColor(){
+    this.redClass = !this.redClass;
+  }
+
   constructor(){
-    console.log(this.printMeOnHTml);
+    console.log(userData);
+    this.loopPrint();
   }
 
    // html - to ts file - w.r.t events
@@ -29,6 +39,10 @@ showHide = false;
     alert('I Am A alert from html page ');
   }
 
+  loopPrint(){
+
+
+  }
   toggleText(){
 
     if(this.printMe === "helo"){
