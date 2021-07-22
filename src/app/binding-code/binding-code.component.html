@@ -1,0 +1,33 @@
+<section class="binding m-3 p-3 bg-light">
+  <header>Bindings</header>
+  <h2>
+    counterVal = {{counterVal}}
+  </h2>
+  {{printValueFromApp | titlecase}}- interpolation
+  <hr />
+  binding from html to a ts file - u need events
+  <button (click)="eventHit()">Hit Me</button>
+  <hr />
+  <button (click)="toggleText()">toggle Me</button>
+  <div class="alert alert-primary">
+    Binding - sharing data from ts file to html file --
+  </div>
+  <ul>
+    <li>one way Binding</li>
+    <ul>
+      <li>interpolation <code> double curly braces </code></li>
+      <li>property binding - <code>[]</code></li>
+    </ul>
+
+    <li>
+      two way binding - [(ngModule)] -- forms - real time html and ts both are
+      getting updated
+    </li>
+  </ul>
+
+  <hr />
+  [] - input or attribute it need a input from a ts file - props - class
+  property () - event directive - it will hit a function in a ts file -
+  event() / class - method
+  <hr />
+</section>

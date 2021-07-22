@@ -15,7 +15,11 @@ export class AppComponent {
   active = 1;
  // one way binding ts file to html file
   printMeOnHTml = "i am a html or a string to be pritned on html page";
-  printMe = "helo";
+  printMe = "i want this to be send in binding component";
+
+  counter = 1;
+
+
   showHide = false;
   arrVal = [1,2,3,4,5,67,23,235];
   caseKey = 2224; // switch case
@@ -36,7 +40,7 @@ export class AppComponent {
 
    // html - to ts file - w.r.t events
   eventHit(){
-    alert('I Am A alert from html page ');
+    alert('I am parent');
   }
 
   loopPrint(){

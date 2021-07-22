@@ -8,6 +8,9 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { FaqComponent } from './faq/faq.component';
 import { ProductsComponent } from './products/products.component';
 import {CourseComp} from './course/cousrse.component';
+import { BindingCodeComponent } from './binding-code/binding-code.component';
+import { HeaderComponent } from './header/header.component';
+import { TheoryComponent } from './theory/theory.component';
 
 // this is a config file - @ngodule represnt configuration or linking of components
 
@@ -18,7 +21,10 @@ import {CourseComp} from './course/cousrse.component';
     AboutUsComponent,
     FaqComponent,
     ProductsComponent,
-    CourseComp
+    CourseComp,
+    BindingCodeComponent,
+    HeaderComponent,
+    TheoryComponent
   ],
   imports: [
     BrowserModule,

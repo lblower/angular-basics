@@ -1,49 +1,17 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Angular Basic</a>
-  </div>
-</nav>
+<app-header></app-header>
+
 
 <div class="container">
-  <div class="theory">
-    <header>Theory</header>
-    <ul>
-      <li>Component has html + css + selector tag. Selector tag can be used in another component HTML for render</li>
-      <li>Directive is used in html</li>
-      <li>pipe is also used in html</li>
-    </ul>
-  </div>
-  <section class="binding m-3 p-3 bg-light">
-    <header>Bindings</header>
-    {{ printMeOnHTml }} - interpolation
-    <hr />
-    binding from html to a ts file - u need events
-    <button (click)="eventHit()">Hit Me</button>
-    <hr />
-    <button (click)="toggleText()">toggle Me</button>
-    {{ printMe }}
-    <div class="alert alert-primary">
-      Binding - sharing data from ts file to html file --
-    </div>
-    <ul>
-      <li>one way Binding</li>
-      <ul>
-        <li>interpolation <code> double curly braces </code></li>
-        <li>property binding - <code>[]</code></li>
-      </ul>
+<app-theory></app-theory>
+<!-- Sharing /communicating b/w parent and child component -->
+  <app-binding-code [printValueFromApp]="printMe" [counterVal]="counter" (eventHitInParent)="eventHit()" ></app-binding-code>
+  <!-- i want printMe value should come from parent -->
 
-      <li>
-        two way binding - [(ngModule)] -- forms - real time html and ts both are
-        getting updated
-      </li>
-    </ul>
+  <!-- this is binding is  child because it's inside app.component
+  Parent right now is app.component and child is binding component
 
-    <hr />
-    [] - input or attribute it need a input from a ts file - props - class
-    property () - event directive - it will hit a function in a ts file -
-    event() / class - method
-    <hr />
-  </section>
+  -->
+
 
   <section class="m-3 p-3 bg-light">
     <h1>-------Structural directive ---</h1>
@@ -159,3 +127,5 @@
   </div>
 </section>
 </div>
+
+
