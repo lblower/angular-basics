@@ -21,8 +21,8 @@ export class AppComponent {
 
 
   showHide = false;
-  arrVal = [1,2,3,4,5,67,23,235];
-  caseKey = 2224; // switch case
+  shareArrWithDumb = [1,2,3,4,5,67,23,235];
+  caseKeyForDUmb = 2224; // switch case
 
   printUserData = userData; // print this in html only if it's is a array ( or object)
 
@@ -99,6 +99,10 @@ export class AppComponent {
     }
 
 
+  }
+
+  dataFromDumb($event){
+    console.log('Event data from Child',$event);
   }
 }
 

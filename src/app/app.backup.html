@@ -1,0 +1,39 @@
+<!-- <app-theory></app-theory> -->
+<!-- Sharing /communicating b/w parent and child component -->
+<app-binding-code [printValueFromApp]="printMe" [counterVal]="counter" (eventHitInParent)="eventHit()" ></app-binding-code>
+<!-- i want printMe value should come from parent -->
+
+<!-- this is binding is  child because it's inside app.component
+Parent right now is app.component and child is binding component
+
+-->
+
+<app-directive-dumb-comp [arrVal]="shareArrWithDumb" [printUserData]="printUserData" (sendDataToParent)="dataFromDumb($event)"    ></app-directive-dumb-comp>
+
+
+<section class="bg-light" >
+    <!-- <h1 style="border:3px solid dotted; color:red">Attribute Directive</h1> -->
+  <button (click)="toogleColor()">ColorChnge</button>
+    <h1 class="alert" [ngClass]="{'alert-danger newclass redclass': redClass , 'alert-primary': !redClass }"  >Attribute Directive</h1>
+
+    alert-primary / alert-danger
+    -ngClass - ngStyle - helps u to attach a class / style Dynamically
+
+  <img src="https://picsum.photos/200/300" alt="image" class="figure" id="dummyimage"  />
+  <hr/>
+  <input type="text" name="search"  class="alert alert-danger" placeholder="Type something"/>
+</section>
+
+<section class="p-3 m-auto">
+<!-- <div class="container" [ngClass]="{ 'bg-light': true }">
+  <header>Component</header>
+
+  <app-courses></app-courses>
+  <hr />
+  <app-contact-us></app-contact-us>
+  <hr />
+  <app-faq></app-faq>
+  <hr />
+  <app-about-us></app-about-us>
+</div> -->
+</section>

@@ -1,131 +1,15 @@
 <app-header></app-header>
 
-
+<nav>
+  <a routerLink="/course"> Course Page</a>
+  <a routerLink="/about"> About Page</a>
+  <a routerLink="/contact"> Contact Page</a>
+  <a routerLink="/theory"> Theory Page</a>
+</nav>
 <div class="container">
-<app-theory></app-theory>
-<!-- Sharing /communicating b/w parent and child component -->
-  <app-binding-code [printValueFromApp]="printMe" [counterVal]="counter" (eventHitInParent)="eventHit()" ></app-binding-code>
-  <!-- i want printMe value should come from parent -->
 
-  <!-- this is binding is  child because it's inside app.component
-  Parent right now is app.component and child is binding component
+  <router-outlet></router-outlet>
 
-  -->
-
-
-  <section class="m-3 p-3 bg-light">
-    <h1>-------Structural directive ---</h1>
-    <div class="conatiner">
-      <h2>ngIf</h2>
-      <p>
-        Decide whater thing should apper or not in html file w.r.t some logic
-      </p>
-      <div *ngIf="showHide">
-        <h1>I am a heading visible to u</h1>
-      </div>
-
-      <section class="alert alert-primary" *ngIf="caseKey === 1">
-        <h1>Sign In</h1>
-      </section>
-      <section *ngIf="caseKey === 2">
-        <h1>Log Out</h1>
-      </section>
-      <section *ngIf="caseKey != 1 && caseKey != 2">
-        <h1>I am if Default case</h1>
-      </section>
-    </div>
-
-    <div class="conatiner">
-      <h2>ngSwitch</h2>
-
-      <span [ngSwitch]="caseKey">
-        <section class="alert alert-primary" *ngSwitchCase="1">
-          <h1>I am Switch case one</h1>
-        </section>
-        <section *ngSwitchCase="2">
-          <h1>I am Switch case two</h1>
-        </section>
-        <section *ngSwitchDefault>
-          <h1>I am Switch Default case</h1>
-        </section>
-      </span>
-    </div>
-    <div class="conatiner">
-      <h2>ngFor</h2>
-      <ul>
-        <li *ngFor="let item of arrVal">
-            {{item}}
-        </li>
-      </ul>
-
-      <div *ngIf="printUserData && printUserData.length">
-
-          I have this much elements - {{printUserData}}
-
-
-
-          <div *ngFor="let userData of printUserDat" >
-              hello <b> {{userData['name']}}  </b>static data
-              <div>
-                {{userData['picture']}}
-
-                <!-- <img src="{{userData['picture']}}" alt="image" />  one way -->
-
-                <img [src]="userData['picture']" alt="image" />
-                  [] - inside html tag before closing
-                 double curly brece inside html tag
-              </div>
-          </div>
-
-          <div *ngFor='let itemValue of  ["asda","Hello","example"]'>
-              {{itemValue}}
-          </div>
-      </div>
-
-    </div>
-    <hr />
-    <section class="theory">
-      -------Strutural --- -- playing with dom - hide/show elements
-      *ngIf="expression" *<span [ngSwitch]="">
-        <p *ngSwitchCase="true"></p>
-        <p *ngSwitchCase="false"></p>
-        <p *ngSwitchDefault></p>
-      </span>
-
-      *ngFor="let item of items" ------------------------------- Attribute
-      Diretive ngStlye ngclass -- it's play with a html tag attributes
-      -----------
-    </section>
-  </section>
-
-  <section class="bg-light" >
-      <!-- <h1 style="border:3px solid dotted; color:red">Attribute Directive</h1> -->
-    <button (click)="toogleColor()">ColorChnge</button>
-      <h1 class="alert" [ngClass]="{'alert-danger newclass redclass': redClass , 'alert-primary': !redClass }"  >Attribute Directive</h1>
-
-      alert-primary / alert-danger
-      -ngClass - ngStyle - helps u to attach a class / style Dynamically
-
-    <img src="https://picsum.photos/200/300" alt="image" class="figure" id="dummyimage"  />
-    <hr/>
-    <input type="text" name="search"  class="alert alert-danger" placeholder="Type something"/>
-  </section>
-
-  <section class="p-3 m-auto">
-  <div class="container" [ngClass]="{ 'bg-light': true }">
-    <header>Component</header>
-
-    <app-courses></app-courses>
-    <hr />
-    <!-- small small component to make a bug html file-->
-    <app-contact-us></app-contact-us>
-    <!-- custom selector -->
-    <hr />
-    <app-faq></app-faq>
-    <hr />
-    <app-about-us></app-about-us>
   </div>
-</section>
-</div>
 
 

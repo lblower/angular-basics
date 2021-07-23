@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TheoryComponent implements OnInit {
 // dumb or presentational component
-  constructor() { }
+
+value = "I Am used in Pipe";
+
+todaysDate = new Date();
+
+constructor() {
+  console.log(this.todaysDate);
+
+}
 
   ngOnInit(): void {
+  }
+
+  checkVale(){
+    console.log(this.value);
   }
 
 }

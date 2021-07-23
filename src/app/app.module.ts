@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -11,6 +13,7 @@ import {CourseComp} from './course/cousrse.component';
 import { BindingCodeComponent } from './binding-code/binding-code.component';
 import { HeaderComponent } from './header/header.component';
 import { TheoryComponent } from './theory/theory.component';
+import { DirectiveDumbCompComponent } from './directive-dumb-comp/directive-dumb-comp.component';
 
 // this is a config file - @ngodule represnt configuration or linking of components
 
@@ -24,11 +27,19 @@ import { TheoryComponent } from './theory/theory.component';
     CourseComp,
     BindingCodeComponent,
     HeaderComponent,
-    TheoryComponent
+    TheoryComponent,
+    DirectiveDumbCompComponent,
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    RouterModule.forRoot([
+      {path:'course', component: CourseComp},
+      {path:'about', component: AboutUsComponent},
+      {path:'contact', component: ContactUsComponent},
+      {path:'theory', component: TheoryComponent},
+
+    ]) // 1st step define routes
   ],
   providers: [],
   bootstrap: [AppComponent]
