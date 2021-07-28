@@ -14,32 +14,27 @@ import { BindingCodeComponent } from './binding-code/binding-code.component';
 import { HeaderComponent } from './header/header.component';
 import { TheoryComponent } from './theory/theory.component';
 import { DirectiveDumbCompComponent } from './directive-dumb-comp/directive-dumb-comp.component';
+import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared.module';
+import { SimpleCourseComponent } from './course/simple-course/simple-course.component';
+import { AdvanceCourseComponent } from './course/advance-course/advance-course.component';
 
 // this is a config file - @ngodule represnt configuration or linking of components
 
 @NgModule({
   declarations: [ // component comes here ,  directive
     AppComponent,
-    ContactUsComponent,
-    AboutUsComponent,
     FaqComponent,
     ProductsComponent,
-    CourseComp,
     BindingCodeComponent,
     HeaderComponent,
-    TheoryComponent,
-    DirectiveDumbCompComponent,
+    DirectiveDumbCompComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    RouterModule.forRoot([
-      {path:'course', component: CourseComp},
-      {path:'about', component: AboutUsComponent},
-      {path:'contact', component: ContactUsComponent},
-      {path:'theory', component: TheoryComponent},
-
-    ]) // 1st step define routes
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
