@@ -1,25 +1,47 @@
 import { NgModule } from '@angular/core';
 import {  RouterModule, Routes } from '@angular/router';
-import { AboutUsComponent } from './about-us/about-us.component';
+
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { CourseComp } from './course/cousrse.component';
-import { TheoryComponent } from './theory/theory.component';
-import { SimpleCourseComponent } from './course/simple-course/simple-course.component';
-import { AdvanceCourseComponent } from './course/advance-course/advance-course.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { CreateComponent } from './course-detail/create/create.component';
+import { UpdateComponent } from './course-detail/update/update.component';
+import { RemoveComponent } from './course-detail/remove/remove.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-  {path:'course', component: CourseComp,
-children:[{path:'simple', component: SimpleCourseComponent},{path:'advance', component: AdvanceCourseComponent},
+  {
+    path:'login', component: LoginComponent
+  },
+  {
+    path:'register', component: RegisterComponent
+  },
+  {
+    path:'contact', component: ContactUsComponent
+  },
+  {
+    path:'course', component: CourseDetailComponent, children: [
+      {
+        path:'create', component: CreateComponent
+      },
+      {
+        path:'up', component: UpdateComponent
+      },
+      {
+        path:'detail/:id', component: RemoveComponent // : represent a dynamic property
+      },
+      {
+        path:"*", component: NotFoundComponent
+      }
 
-{path:'s', component: SimpleCourseComponent}]},
-
-  {path:'about', component: AboutUsComponent},
-  {path:'contact', component: ContactUsComponent},
-  {path:'theory', component: TheoryComponent},
+    ]
+  }
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes)],
   exports:[RouterModule]
 })
 export class  AppRoutingModule { }

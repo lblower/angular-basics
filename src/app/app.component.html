@@ -1,15 +1,28 @@
-<app-header></app-header>
+<div class="m-5 center">
+<header>
+  Angular Course Website
+</header>
 
 <nav>
-  <a routerLink="/course"> Course Page</a>
-  <a routerLink="/about"> About Page</a>
-  <a routerLink="/contact"> Contact Page</a>
-  <a routerLink="/theory"> Theory Page</a>
-</nav>
+
+  <a routerLink="login"> Login</a>
+  <!-- routing from html files-->
+  <a routerLink="register"> Register</a>
+  <a routerLink="contact"> Contact us</a>
+
+  <a routerLink="course/up"> Course us</a>
+  <!-- <a routerLink="course"> course</a> -->
+ </nav>
 <div class="container">
-
+  // body will come
+  <!-- <app-login></app-login> -->
+  <!-- <app-register></app-register> -->
+  <!-- <app-course-detail></app-course-detail> -->
+  <!-- <app-contact-us></app-contact-us> -->
   <router-outlet></router-outlet>
+</div>
 
-  </div>
-
-
+<footer class="center">
+    Angular
+</footer>
+</div>

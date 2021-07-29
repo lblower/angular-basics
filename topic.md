@@ -7,8 +7,11 @@
 - Directive -  ngif ngfor ng switch
 - component - how to septate code | use cases
 - pipe - inbuilt / provided from angular side  - (only in DOm update value before printing ) -
-- routing - 
-
+- routing -  
+ -- simple routing 
+  -- child routing
+ -- getting data from routes
+ -- adding a guard on route
 
 ## Practice 
 

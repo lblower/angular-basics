@@ -6,7 +6,7 @@ import { CourseComp } from './course/cousrse.component';
 import { TheoryComponent } from './theory/theory.component';
 import { SimpleCourseComponent } from './course/simple-course/simple-course.component';
 import { AdvanceCourseComponent } from './course/advance-course/advance-course.component';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing-backup.module';
 
 
 @NgModule({
