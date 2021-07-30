@@ -12,6 +12,8 @@
   -- child routing
  -- getting data from routes
  -- adding a guard on route
+- lazy loading
+- seprate code in modules wise folder
 
 ## Practice 
 
@@ -21,3 +23,12 @@
 - practise pipe
 - create a blank component | add some dummy html | open that componet in route
   - /newcomp - open ur component
+
+
+
+
+-- small
+ - view encapsulation
+ - prod build
+ - debugger
+ 

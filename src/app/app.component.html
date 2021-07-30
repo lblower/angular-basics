@@ -1,19 +1,28 @@
-<div class="m-5 center">
-<header>
-  Angular Course Website
-</header>
+<div class="center">
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Angular Course Website</a>|
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse pull-right me-2" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <!-- routing from html files-->
+            <a class="nav-link active" aria-current="page" routerLink="login" routerLinkActive>Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="register" >Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="contact">Contact us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+ <div class="container">
 
-<nav>
-
-  <a routerLink="login"> Login</a>
-  <!-- routing from html files-->
-  <a routerLink="register"> Register</a>
-  <a routerLink="contact"> Contact us</a>
-
-  <a routerLink="course/up"> Course us</a>
-  <!-- <a routerLink="course"> course</a> -->
- </nav>
-<div class="container">
   // body will come
   <!-- <app-login></app-login> -->
   <!-- <app-register></app-register> -->
@@ -22,7 +31,10 @@
   <router-outlet></router-outlet>
 </div>
 
-<footer class="center">
-    Angular
+<footer class="d-flex justify-content-center mt-5 alert alert-danger">
+    &copy; Angular
+    <nav class="d-flex">
+      Join Us
+    </nav>
 </footer>
 </div>

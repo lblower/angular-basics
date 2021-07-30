@@ -13,13 +13,15 @@ import { UpdateComponent } from './course-detail/update/update.component';
 import { RemoveComponent } from './course-detail/remove/remove.component';
 import { CreateComponent } from './course-detail/create/create.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FormsModule } from '@angular/forms';
+import { DetailComponent } from './course-detail/detail/detail.component';
 
 // this is a config file - @ngodule represnt configuration or linking of components
 
 @NgModule({
   declarations: [ // component comes here ,  directive
     AppComponent, LoginComponent, RegisterComponent, ContactUsComponent,
-     CourseDetailComponent, UpdateComponent, RemoveComponent, CreateComponent, NotFoundComponent
+     CourseDetailComponent, UpdateComponent, RemoveComponent, CreateComponent, NotFoundComponent, DetailComponent
   ],
   imports: [
     CommonModule,

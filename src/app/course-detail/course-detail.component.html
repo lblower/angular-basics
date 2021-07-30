@@ -1,22 +1,28 @@
-<p>course-detail works!</p>
-<nav>
+<div class="container bg bg-primary">
+<h3>course-detail works!</h3>
 
-  <a routerLink="create"> Create Course</a>
-  <!-- routing from html files-->
-  <a routerLink="up"> Update</a>
-  <a routerLink="detail/angular"> Deatils</a>
-  <a routerLink="re/0"> Remove</a>
+<ul class="nav justify-content-center bg bg-light">
+  <li class="nav-item">
+    <a class="nav-link" routerLink="create">Create Course</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="update">Update</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="detail/angular/all">Detail Via Id</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="re/0">Remove</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="not FOund">Not Found Link </a>
+  </li>
+</ul>
 
-  <a routerLink="re/q"> Remove 1</a>
-
-  <a routerLink="re/3144"> Remove 2</a>
-
-  <a routerLink="reaasdasdasd"> Non Existin</a>
-  <!-- <a routerLink="course"> course</a> -->
- </nav>
-<div class="jumbotron">
+<div class="alert alert-warning mt-3" >
   <!-- <app-create></app-create>
   <app-update></app-update>
   <app-remove></app-remove> -->
   <router-outlet></router-outlet>
+</div>
 </div>

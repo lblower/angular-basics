@@ -9,6 +9,14 @@ import { CreateComponent } from './course-detail/create/create.component';
 import { UpdateComponent } from './course-detail/update/update.component';
 import { RemoveComponent } from './course-detail/remove/remove.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DetailComponent } from './course-detail/detail/detail.component';
+
+// Lazy Loading - i don't need a course related code till user login
+// reacharge
+// insusrace
+// stamnetnment
+
+// Auth Gurad = Resitate a page open all
 
 const routes: Routes = [
   {
@@ -26,13 +34,16 @@ const routes: Routes = [
         path:'create', component: CreateComponent
       },
       {
-        path:'up', component: UpdateComponent
+        path:'update', component: UpdateComponent
       },
       {
-        path:'detail/:id', component: RemoveComponent // : represent a dynamic property
+        path:'detail/:course/all', component: DetailComponent // : represent a dynamic property
       },
       {
-        path:"*", component: NotFoundComponent
+        path:'remove/:id', component: RemoveComponent // : represent a dynamic property
+      },
+      {
+        path:"**", component: NotFoundComponent
       }
 
     ]

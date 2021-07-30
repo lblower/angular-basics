@@ -4,6 +4,9 @@ Crud - Create read update  delete
 Updaete - open it becomes | Profile - form filling aand submit , Delete - U r removing a email - Delete * icon , u remove 
 
 
+
+
+------------------------------------------------------
 - login - 
 - Register
 - ForGot Password Page
