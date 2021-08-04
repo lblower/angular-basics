@@ -43,6 +43,12 @@ const routes: Routes = [
         path:'remove/:id', component: RemoveComponent // : represent a dynamic property
       },
       {
+        path: '',
+        // component: CreateComponent
+        pathMatch:'full',
+        redirectTo: 'create'
+      },
+      {
         path:"**", component: NotFoundComponent
       }
 

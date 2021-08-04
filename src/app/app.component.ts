@@ -12,18 +12,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'] // meta data property of @component decorator
 })
 export class AppComponent implements OnInit {
+
   // life-cyle of a component
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-
+    console.log('2nd Method, automatically called', 'Only called once')
     // this is first mehtod autmoalllcy  excuted when a component is created
   }
 
     ngOnChanges(changes: SimpleChanges): void {
       //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
       //Add '${implements OnChanges}' to the class.
-
+      console.log('1st Method, automatically called','called every time there is change in INPUT property')
     }
 
     ngAfterViewInit(): void {
@@ -54,7 +55,7 @@ export class AppComponent implements OnInit {
   ngOnDestroy(): void {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
-
+    console.log('I Am destroyed','Do Some clean up if u want to')
   }
 
 }

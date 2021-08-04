@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseDetailComponent implements OnInit {
 
+  counter = 1;
+  new2ndProp = 100;
+  showComponent = true;
+
+  toggle(){
+    this.showComponent = !this.showComponent;
+  }
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  updateInput(){
+    this.counter = this.counter + 1;
+  }
+  updatenew2ndProp(){
+
+    this.new2ndProp = this.new2ndProp + 1;
   }
 
 }

@@ -19,8 +19,14 @@
   </li>
 </ul>
 
+<button (click)="updateInput()">Update COunter</button>
+<button (click)="updatenew2ndProp()">Update 2nd prope</button>
 <div class="alert alert-warning mt-3" >
-  <!-- <app-create></app-create>
+  <button (click)="toggle()"> toggle </button>
+  <div *ngIf="showComponent" class="alert alert-danger">
+  <app-create [showNgChange]="counter" [showN2nd]="new2ndProp"></app-create>
+</div>
+  <!--
   <app-update></app-update>
   <app-remove></app-remove> -->
   <router-outlet></router-outlet>
