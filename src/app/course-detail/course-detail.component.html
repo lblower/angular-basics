@@ -19,12 +19,16 @@
   </li>
 </ul>
 
-<button (click)="updateInput()">Update COunter</button>
+<button #htmlElement (click)="updateInput()">Update COunter</button>
 <button (click)="updatenew2ndProp()">Update 2nd prope</button>
 <div class="alert alert-warning mt-3" >
   <button (click)="toggle()"> toggle </button>
   <div *ngIf="showComponent" class="alert alert-danger">
-  <app-create [showNgChange]="counter" [showN2nd]="new2ndProp"></app-create>
+  <app-create [showNgChange]="counter" [showN2nd]="new2ndProp">
+
+    <p class="alert alert-light">Hello i am in b/w angular custom selector tag</p>
+
+  </app-create>
 </div>
   <!--
   <app-update></app-update>

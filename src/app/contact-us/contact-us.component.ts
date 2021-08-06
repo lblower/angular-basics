@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactUsComponent implements OnInit {
 
+  str = 'I am not visible now';
   constructor() { }
 
   ngOnInit(): void {

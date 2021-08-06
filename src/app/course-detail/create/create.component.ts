@@ -20,6 +20,7 @@ export class CreateComponent implements OnInit , OnChanges , OnDestroy, AfterCon
   }
   // life-cyle of a component
   ngOnInit(): void {
+    // before ui stat rendring and after component is registered in Angular
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     console.log('%c 2nd Method, automatically called Only called once','background: red');
@@ -30,7 +31,7 @@ export class CreateComponent implements OnInit , OnChanges , OnDestroy, AfterCon
     ngOnChanges(changes: SimpleChanges): void {
       //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
       //Add '${implements OnChanges}' to the class.
-      console.log('%c 1st Method, automatically called','called every time there is change in INPUT property','background:orange');
+      console.log('%c 1st Method, automatically called called every time there is change in INPUT property','background:orange');
       console.log(changes);
       if(changes.showNgChange){
         this.printWhoischand = "Counter is updated via show ng chngage";

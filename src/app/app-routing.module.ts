@@ -10,6 +10,7 @@ import { UpdateComponent } from './course-detail/update/update.component';
 import { RemoveComponent } from './course-detail/remove/remove.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailComponent } from './course-detail/detail/detail.component';
+import { CourseDetailModule } from './course-detail/course-detail.module';
 
 // Lazy Loading - i don't need a course related code till user login
 // reacharge
@@ -29,30 +30,8 @@ const routes: Routes = [
     path:'contact', component: ContactUsComponent
   },
   {
-    path:'course', component: CourseDetailComponent, children: [
-      {
-        path:'create', component: CreateComponent
-      },
-      {
-        path:'update', component: UpdateComponent
-      },
-      {
-        path:'detail/:course/all', component: DetailComponent // : represent a dynamic property
-      },
-      {
-        path:'remove/:id', component: RemoveComponent // : represent a dynamic property
-      },
-      {
-        path: '',
-        // component: CreateComponent
-        pathMatch:'full',
-        redirectTo: 'create'
-      },
-      {
-        path:"**", component: NotFoundComponent
-      }
-
-    ]
+    path:'course',
+    loadChildren: () => import('./course-detail/course-detail.module').then(m => m.CourseDetailModule)
   }
 ];
 

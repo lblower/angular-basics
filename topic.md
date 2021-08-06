@@ -12,8 +12,10 @@
   -- child routing
  -- getting data from routes
  -- adding a guard on route
-- lazy loading
+- lazy loading 
 - seprate code in modules wise folder
+- Making Modules (divide my project)
+- ng g - all pipe , directive , class-
 
 ## Practice 
 
