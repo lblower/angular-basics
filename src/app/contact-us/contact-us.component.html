@@ -1,10 +1,16 @@
-<h1 appHighlit >contact-us works!</h1>
+<h1  class="attributes">contact-us works!</h1>
 
 
-<p *ngIf="true">I am a puipue page showing pipe eccample</p>
+<p *ngIf="false">I am a puipe page showing pipe eccample</p>
 
 
-<p appHighlit > {{str | somefile}}</p>
+<p  appcolor  > {{str | somefile}}</p>
 
 
-<h1>{{5 | mulByTwo}}</h1>
+<h1 [class.alert.alert-danger]="showAlert" class="classSelec" >{{5 | mulByTwo}}</h1>
+<hr/>
+
+<h1  appcolor   [bgColor]="color"  class="appHighlit"  id="appHighlit">{{multByTwo(5)}}</h1>
+
+
+<button (click)="changeColor()">Chnage Color </button>

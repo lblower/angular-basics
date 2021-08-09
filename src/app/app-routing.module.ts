@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {  RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { LoginComponent } from './login/login.component';
@@ -21,23 +21,28 @@ import { CourseDetailModule } from './course-detail/course-detail.module';
 
 const routes: Routes = [
   {
-    path:'login', component: LoginComponent
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path:'register', component: RegisterComponent
+    path: 'register',
+    component: RegisterComponent,
   },
   {
-    path:'contact', component: ContactUsComponent
+    path: 'contact',
+    component: ContactUsComponent,
   },
   {
-    path:'course',
-    loadChildren: () => import('./course-detail/course-detail.module').then(m => m.CourseDetailModule)
-  }
+    path: 'course',
+    loadChildren: () =>
+      import('./course-detail/course-detail.module').then(
+        (m) => m.CourseDetailModule
+      ),
+  },
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes)],
-  exports:[RouterModule]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-export class  AppRoutingModule { }
+export class AppRoutingModule {}

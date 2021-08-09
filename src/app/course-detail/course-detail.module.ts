@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    CourseDetailComponent, UpdateComponent, RemoveComponent, CreateComponent,DetailComponent
+    CourseDetailComponent, UpdateComponent, RemoveComponent, CreateComponent, DetailComponent
   ],
   imports: [
     CommonModule,
