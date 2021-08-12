@@ -1,6 +1,6 @@
 export enum Colors {
-  pink = 1,
-  orange = "Some val",
+  pink = "pink",
+  orange = "OR"
 }
 
 export enum Burger {

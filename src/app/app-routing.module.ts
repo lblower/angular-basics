@@ -11,6 +11,7 @@ import { RemoveComponent } from './course-detail/remove/remove.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailComponent } from './course-detail/detail/detail.component';
 import { CourseDetailModule } from './course-detail/course-detail.module';
+import { CarComponent } from './car/car.component';
 
 // Lazy Loading - i don't need a course related code till user login
 // reacharge
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactUsComponent,
+  },
+  {
+    path: 'car',
+    component: CarComponent,
   },
   {
     path: 'course',

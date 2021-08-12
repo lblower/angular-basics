@@ -12,13 +12,16 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
+import { CarComponent } from './car/car.component';
+import { Engine } from './car/engine';
 
 // this is a config file - @ngodule represnt configuration or linking of components
 
 @NgModule({
   declarations: [ // component comes here ,  directive , pipe comes
     AppComponent, LoginComponent, RegisterComponent, ContactUsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CarComponent
   ],
   imports: [ // modules
     CommonModule,
@@ -26,7 +29,9 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     SharedModule
   ],
-  providers: [],
+  providers: [{provide:Engine,useFactory: () => {
+    new Engine("BMW ENgine Type")
+  }}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

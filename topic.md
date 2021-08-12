@@ -17,6 +17,9 @@
 - Making Modules (divide my project)
 - ng g - all pipe , directive , class-
 
+- dependencies injection  - this 
+- Observable / rxjs / pattern - this
+
 ## Practice 
 
 - create a component manually.
