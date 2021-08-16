@@ -14,6 +14,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
 import { CarComponent } from './car/car.component';
 import { Engine } from './car/engine';
+import { LoggerService } from './shared/logger.service';
 
 // this is a config file - @ngodule represnt configuration or linking of components
 
@@ -31,7 +32,18 @@ import { Engine } from './car/engine';
   ],
   providers: [{provide:Engine,useFactory: () => {
     new Engine("BMW ENgine Type")
-  }}],
+  }},
+
+  {provide: 'uniqueToken' , useValue: 'I am Dependency injected Environment thing'},
+  {provide: 'uniqueFunc' , useValue: () => {
+    console.error(' I used in 30 components', this);
+  }},
+
+  // {provide: LoggerService, useClass: LoggerService},
+  // LoggerService
+
+
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

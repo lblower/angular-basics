@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { LoggerService } from '../shared/logger.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -10,9 +11,13 @@ export class ContactUsComponent implements OnInit {
   str = 'I am not visible now';
   showAlert = true;
   color = 'red';
-  constructor() { }
+  // private logObj: LoggerService = new LoggerService();
+  constructor(private logObj: LoggerService , @Inject('uniqueToken') private tokenVal , @Inject('uniqueFunc') private someFunc ) { }
 
   ngOnInit(): void {
+    this.logObj.info('I am inside Contact component');
+    console.error(this.tokenVal , ' I Used in Provders');
+    this.someFunc()
   }
 
   multByTwo(value){

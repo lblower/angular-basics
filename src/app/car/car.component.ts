@@ -11,7 +11,7 @@ import { Engine } from './engine';
 export class CarComponent extends Vehicle implements OnInit {
   engineClass:Engine = new Engine("BMW"); // maanul extend , manul injection of a object
 
-  // Engine e;
+  engine2:Engine = new Engine("Maruti");
   // e = new Engine()
   constructor(private e: Engine) {
     super(12,Colors.orange)
