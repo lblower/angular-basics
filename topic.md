@@ -20,6 +20,11 @@
 - dependencies injection  - this 
 - Observable / rxjs / pattern - this
 
+- differences b/w a observable and promise ? - imp 
+  - HTTP ->  aynscronus task
+- forms - Reactive forms vs template forms
+- http -> HTTPCLIent module
+
 ## Practice 
 
 - create a component manually.

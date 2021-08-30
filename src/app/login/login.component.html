@@ -1,5 +1,14 @@
-<h1 appcolor>login works!</h1>
 
+<h1 appcolor>login works!</h1>
+<hr/>
+<div>--Subject---</div>
+{{iAmFromSubject}}
+<button (click)="fireSubject()">Fire subject event</button>
+<button (click)="subscribeLaterOn()">Add 2nd alert subscribe to subject</button>
+<button (click)="alertValueOfSubject()">value in subject</button>
+<button (click)="fireSubjectSecond()">New value</button>
+
+<hr/>
 <div>Url: {{urlData}}
   </div>
 
