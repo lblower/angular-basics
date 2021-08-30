@@ -28,12 +28,14 @@
  <div class="container">
 
   // body will come
-  <!-- <app-login></app-login> -->
-  <!-- <app-register></app-register> -->
-  <!-- <app-course-detail></app-course-detail> -->
-  <!-- <app-contact-us></app-contact-us> -->
+
   <router-outlet></router-outlet>
 </div>
+
+<button (click)="customLoginEvent()">Value set in service</button>
+<h1 class="text-danger">
+  {{printSharedData}}
+</h1>
 
 <footer class="d-flex justify-content-center mt-5 alert alert-danger">
     &copy; Angular
@@ -42,3 +44,9 @@
     </nav>
 </footer>
 </div>
+
+
+  <!-- <app-login></app-login> -->
+  <!-- <app-register></app-register> -->
+  <!-- <app-course-detail></app-course-detail> -->
+  <!-- <app-contact-us></app-contact-us> -->

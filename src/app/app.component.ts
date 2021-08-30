@@ -1,5 +1,6 @@
 import { SimpleChanges, OnInit } from '@angular/core';
 import { Component } from '@angular/core';
+import { DataSharingService } from './shared/data-sharing.service';
 
 // decorator @ - is a typescript specific logic
 // @pipe -
@@ -13,8 +14,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
+  userName = "Himanshu";
+
+  printSharedData = null;
+  constructor(public sharedData:DataSharingService ){
+
+  }
+
+  customLoginEvent() {
+    this.sharedData.setSharedData('Set valued from app component latest one');
+    this.printSharedData = this.sharedData.getSharedData();
+  }
+
   // life-cyle of a component
   ngOnInit(): void {
+
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     console.log('2nd Method, automatically called', 'Only called once')

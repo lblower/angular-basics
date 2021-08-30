@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule   } from '@angular/common';
+import { HttpClientModule } from "@angular/common/http";
+
 // import { RouterModule } from '@angular/router';
 
 
@@ -28,12 +30,12 @@ import { LoggerService } from './shared/logger.service';
     CommonModule,
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [{provide:Engine,useFactory: () => {
     new Engine("BMW ENgine Type")
   }},
-
   {provide: 'uniqueToken' , useValue: 'I am Dependency injected Environment thing'},
   {provide: 'uniqueFunc' , useValue: () => {
     console.error(' I used in 30 components', this);

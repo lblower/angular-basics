@@ -25,6 +25,15 @@
 - forms - Reactive forms vs template forms
 - http -> HTTPCLIent module
 
+- forms html
+
+
+
+## INfo 
+-- how we can share data b/w compoennt 
+  - parent child relation - input and output 
+  - if not -then use service - inside that make subject and BehaviorSubject
+  - differences subject and BehaviorSubject
 ## Practice 
 
 - create a component manually.
