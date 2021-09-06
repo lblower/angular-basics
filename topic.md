@@ -51,3 +51,7 @@
  - prod build
  - debugger
  
+
+
+
+ CRUD - create - pOSt ((forms)) , Read - GET , Update (forms) , delte/remove (path parm)

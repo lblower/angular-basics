@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { LoggerService } from '../shared/logger.service';
 import { DataSharingService } from '../shared/data-sharing.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpApiService } from '../shared/http-api.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -18,7 +18,7 @@ export class ContactUsComponent implements OnInit {
   // private logObj: LoggerService = new LoggerService();
   constructor(private logObj: LoggerService ,
     public sharedData:DataSharingService,
-    public httpObj: HttpClient,
+    public httpObj: HttpApiService,
      @Inject('uniqueToken') private tokenVal , @Inject('uniqueFunc') private someFunc ) { }
 
   ngOnInit(): void {
@@ -35,14 +35,18 @@ export class ContactUsComponent implements OnInit {
       const url = "https://pokeapi.co/api/v2/pokemon/ditto";
       // get
     console.log('1');
-      this.httpObj.get(url).subscribe((succ: any ) => {
-      // successany
-      console.log(succ);
-      this.idOfPokemn = succ.id;
+
+      this.httpObj.getDataFromServer(url).subscribe((anything:any ) => {
+      // // successany
+       console.log(anything);
+       this.idOfPokemn = anything.id;
     }, (err) => {
-      //error
-      console.log('2 if erorr');
+      // //error
+      // console.log('2 if erorr');
     });
+
+
+
     console.log('333');
   }
 

@@ -44,6 +44,17 @@ const routes: Routes = [
         (m) => m.CourseDetailModule
       ),
   },
+
+  {
+    path: 'apiwork',
+    loadChildren: () =>
+      import('./crudoperation/crudoperation.module').then(
+        (m) => m.CrudoperationModule
+      ),
+  },
+
+
+
 ];
 
 @NgModule({

@@ -1,0 +1,14 @@
+<div class="main-container">
+  <ng-container  *ngIf="showLoader">
+    Loading....
+  </ng-container>
+    <ul *ngIf="starWarsApiData">
+      <li *ngFor="let item of starWarsApiData">
+        <div>Name : {{item.name}}</div>
+        <div>Eye COlor: {{item.eye_color}} </div>
+        <div>Created-  {{ item.created | date: yyy}}</div>
+
+      </li>
+    </ul>
+</div>
+
