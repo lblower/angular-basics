@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  url:'DEV-default API URL'
+  url:'DEV-default API URL',
+  postsApi: 'http://localhost:3000/'
 };
 
 /*
